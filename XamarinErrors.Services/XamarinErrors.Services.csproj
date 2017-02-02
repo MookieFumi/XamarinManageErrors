@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -46,21 +46,11 @@
     <Compile Include="Veemer\DTO\ClassificationLevel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="ModernHttpClient">
-      <HintPath>..\Components\modernhttpclient-2.4.2\lib\android\ModernHttpClient.dll</HintPath>
-    </Reference>
-    <Reference Include="OkHttp">
-      <HintPath>..\Components\modernhttpclient-2.4.2\lib\android\OkHttp.dll</HintPath>
-    </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="StarWars\" />
-    <Folder Include="StarWars\DTO\" />
-    <Folder Include="Veemer\" />
-    <Folder Include="Veemer\DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>
