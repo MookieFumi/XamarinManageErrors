@@ -15,11 +15,10 @@ namespace XamarinErrors
 		{
 			base.OnCreate();
 
-			// Global UnhandledExceptionRaiser
 			AndroidEnvironment.UnhandledExceptionRaiser += AndroidEnvironment_OnUnhandledExceptionRaiser();
 			AppDomain.CurrentDomain.UnhandledException += CurrentDomain_OnUnhandledException();
 
-			CrashManager.Register(this, "2c08366e1b8a431ab13e2b22d5c7745a", new MyCrashListener());
+			CrashManager.Register(this, "2c08366e1b8a431ab13e2b22d5c7745a", new XamarinErrorsCrashListener());
 		}
 
 	    private static UnhandledExceptionEventHandler CurrentDomain_OnUnhandledException()

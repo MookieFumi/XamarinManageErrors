@@ -2,7 +2,7 @@ using HockeyApp.Android;
 
 namespace XamarinErrors
 {
-    class MyCrashListener : CrashManagerListener
+    class XamarinErrorsCrashListener : CrashManagerListener
     {
         public override string Contact
         {
