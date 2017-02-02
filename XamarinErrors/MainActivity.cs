@@ -6,6 +6,8 @@ using XamarinErrors.Services;
 using System.Linq;
 using System.Threading;
 using Android.Content;
+using XamarinErrors.Services.StarWars;
+using XamarinErrors.Services.Veemer;
 
 namespace XamarinErrors
 {

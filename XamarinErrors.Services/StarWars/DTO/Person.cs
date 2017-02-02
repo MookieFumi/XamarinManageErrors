@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace XamarinErrors.Services
+namespace XamarinErrors.Services.StarWars.DTO
 {
 public class Person
 	{

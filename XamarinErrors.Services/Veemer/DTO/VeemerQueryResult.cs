@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace XamarinErrors.Services
+namespace XamarinErrors.Services.Veemer.DTO
 {
 
 	public class VeemerQueryResult<T>

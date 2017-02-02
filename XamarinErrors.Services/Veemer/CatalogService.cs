@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
-using XamarinErrors.Services.Veemer;
+using XamarinErrors.Services.Veemer.DTO;
 
-namespace XamarinErrors.Services
+namespace XamarinErrors.Services.Veemer
 {
 	public class CatalogService : VeemerServiceBase
 	{

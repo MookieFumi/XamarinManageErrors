@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
+using XamarinErrors.Services.StarWars.DTO;
 
-namespace XamarinErrors.Services
+namespace XamarinErrors.Services.StarWars
 {
 
 	public class PeopleService : StarWarsServiceBase

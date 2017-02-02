@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace XamarinErrors.Services
+namespace XamarinErrors.Services.StarWars
 {
 	public class StarWarsServiceBase
 	{

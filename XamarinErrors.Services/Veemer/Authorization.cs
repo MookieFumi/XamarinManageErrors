@@ -1,4 +1,4 @@
-namespace XamarinErrors.Services
+namespace XamarinErrors.Services.Veemer
 {
 
 	public class Authorization : IAuthorization

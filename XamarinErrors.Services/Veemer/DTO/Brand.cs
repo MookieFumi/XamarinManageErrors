@@ -1,4 +1,4 @@
-namespace XamarinErrors.Services
+namespace XamarinErrors.Services.Veemer.DTO
 {
 
 	public class Brand

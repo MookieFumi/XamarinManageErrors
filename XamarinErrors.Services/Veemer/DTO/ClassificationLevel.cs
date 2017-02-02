@@ -1,7 +1,4 @@
-using System.Threading.Tasks;
-using XamarinErrors.Services.Veemer;
-
-namespace XamarinErrors.Services
+namespace XamarinErrors.Services.Veemer.DTO
 {
 
 	public class ClassificationLevel
