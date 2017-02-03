@@ -5,7 +5,7 @@ namespace XamarinErrors.Services.Veemer
 {
 	public class CatalogService : VeemerServiceBase
 	{
-		public CatalogService(IAuthorization authorization):base(authorization)
+		public CatalogService(IAuthorization authorization) : base(authorization)
 		{
 		}
 

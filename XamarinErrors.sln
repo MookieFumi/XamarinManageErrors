@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinErrors", "XamarinErrors\XamarinErrors.csproj", "{844380FC-66E7-4B96-84AD-9A2A25D4CD4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinErrors.Droid", "XamarinErrors\XamarinErrors.Droid.csproj", "{844380FC-66E7-4B96-84AD-9A2A25D4CD4E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinErrors.Services", "XamarinErrors.Services\XamarinErrors.Services.csproj", "{6ECD20D4-A593-4152-8174-69B56DDF4A93}"
 EndProject

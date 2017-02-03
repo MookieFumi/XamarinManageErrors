@@ -4,7 +4,6 @@ using Android.Runtime;
 using HockeyApp.Android;
 namespace XamarinErrors
 {
-
 	[Application]
 	public class XamarinErrorsApplication : Application
 	{
@@ -21,11 +20,11 @@ namespace XamarinErrors
 			CrashManager.Register(this, "2c08366e1b8a431ab13e2b22d5c7745a", new XamarinErrorsCrashListener());
 		}
 
-	    private static UnhandledExceptionEventHandler CurrentDomain_OnUnhandledException()
-	    {
-	        return (sender, args) =>
-	        {
-	            /*
+		static UnhandledExceptionEventHandler CurrentDomain_OnUnhandledException()
+		{
+			return (sender, args) =>
+			{
+				/*
                  * When a background thread crashes this is the code that will be executed. You can
                  * recover from this.
                  * You might for example:
@@ -41,22 +40,22 @@ namespace XamarinErrors
                  * If you are requiring a minimum version less than API 14, you would have to set _CurrentActivity in each time
                  * the a different activity is brought to the foreground.
                  */
-	        };
-	    }
+			};
+		}
 
-	    private static EventHandler<RaiseThrowableEventArgs> AndroidEnvironment_OnUnhandledExceptionRaiser()
-	    {
-	        return (sender, args) =>
-	        {
-	            /*
+		static EventHandler<RaiseThrowableEventArgs> AndroidEnvironment_OnUnhandledExceptionRaiser()
+		{
+			return (sender, args) =>
+			{
+				/*
                  * When the UI Thread crashes this is the code that will be executed. There is no context at this point
                  * and no way to recover from the exception. This is where you would capture the error and log it to a 
                  * file for example. You might be able to post to a web handler, I have not tried that.
                  * 
                  * You can access the information about the exception in the args.Exception object.
                  */
-	        };
-	    }
+			};
+		}
 
 	}
 }

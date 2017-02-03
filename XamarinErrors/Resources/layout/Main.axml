@@ -11,13 +11,13 @@
         android:weightSum="1">
         <Button
             android:text="Unhandled Exception"
-            android:id="@+id/button1"
+            android:id="@+id/btnUnhandledException"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.5" />
         <Button
             android:text="Handled Exception"
-            android:id="@+id/button2"
+            android:id="@+id/btnHandledException"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.5" />
@@ -30,13 +30,13 @@
         android:weightSum="1">
         <Button
             android:text="SW - No error"
-            android:id="@+id/button3"
+            android:id="@+id/btnSWNoError"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.5" />
         <Button
             android:text="SW Api - Error"
-            android:id="@+id/button4"
+            android:id="@+id/btnSWError"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.5" />
@@ -51,13 +51,13 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="1505"
-            android:id="@+id/editText1"
+            android:id="@+id/txtShopId"
             android:minEms="4"
             android:gravity="center" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/button5"
+            android:id="@+id/btnCatalog"
             android:text="Veemer - Catalog" />
     </LinearLayout>
     <LinearLayout
@@ -69,7 +69,7 @@
             android:inputType="number"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/editText2"
+            android:id="@+id/txtBrandId"
             android:text="1021"
             android:minEms="4"
             android:gravity="center" />
@@ -77,18 +77,6 @@
             android:text="Veemer - Clas. Levels"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/button6" />
+            android:id="@+id/btnClassificationLevels" />
     </LinearLayout>
-    <EditText
-        android:inputType="textEmailAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText3"
-        android:text="miguel.martin@analyticalways.com" />
-    <EditText
-        android:inputType="textPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText4"
-        android:text="piloto@2016" />
 </LinearLayout>
