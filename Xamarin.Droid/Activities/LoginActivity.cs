@@ -10,7 +10,7 @@ using Xamarin.Services.Veemer;
 
 namespace Xamarin.Droid.Activities
 {
-	[Activity(Label = "Xamarin Errors. Login.", MainLauncher = true, Icon = "@mipmap/icon")]
+	[Activity(MainLauncher = true, Icon = "@mipmap/icon")]
 	public class LoginActivity : BaseActivity
 	{
 		protected override void OnCreate(Bundle savedInstanceState)
@@ -43,7 +43,7 @@ namespace Xamarin.Droid.Activities
 			}
 			catch (HttpWebApiException exception)
 			{
-				Toast.MakeText(this, $"Exception: {exception.InnerException.Message}", ToastLength.Long).Show();
+				Toast.MakeText(this, $"{exception.InnerException.Message}", ToastLength.Long).Show();
 			}
 			finally
 			{

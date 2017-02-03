@@ -43,6 +43,14 @@ namespace Xamarin.Droid.Infrastructure
 			Save(LOGINRESPONSE, loginResponse);
 		}
 
+		public static void ClearAll()
+		{
+			var sharedPreferences = Application.Context.GetSharedPreferences(APPNAME, FileCreationMode.Private);
+			var edit = sharedPreferences.Edit();
+			edit.Clear();
+			edit.Commit();
+		}
+
 		static void Save(string key, string value)
 		{
 			var sharedPreferences = Application.Context.GetSharedPreferences(APPNAME, FileCreationMode.Private);

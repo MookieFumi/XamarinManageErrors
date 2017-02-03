@@ -2,81 +2,90 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout3"
-        android:weightSum="1">
-        <Button
-            android:text="Unhandled Exception"
-            android:id="@+id/btnUnhandledException"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5" />
-        <Button
-            android:text="Handled Exception"
-            android:id="@+id/btnHandledException"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout4"
-        android:weightSum="1">
-        <Button
-            android:text="SW - No error"
-            android:id="@+id/btnSWNoError"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5" />
-        <Button
-            android:text="SW Api - Error"
-            android:id="@+id/btnSWError"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1">
-        <EditText
-            android:inputType="number"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="1505"
-            android:id="@+id/txtShopId"
-            android:minEms="4"
-            android:gravity="center" />
-        <Button
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/btnCatalog"
-            android:text="Veemer - Catalog" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout2">
-        <EditText
-            android:inputType="number"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/txtBrandId"
-            android:text="1021"
-            android:minEms="4"
-            android:gravity="center" />
-        <Button
-            android:text="Veemer - Clas. Levels"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout3"
+            android:weightSum="1">
+            <Button
+                android:text="Unhandled Exception"
+                android:id="@+id/btnUnhandledException"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" />
+            <Button
+                android:text="Handled Exception"
+                android:id="@+id/btnHandledException"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/btnClassificationLevels" />
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout4"
+            android:weightSum="1">
+            <Button
+                android:text="SW - No error"
+                android:id="@+id/btnSWNoError"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" />
+            <Button
+                android:text="SW Api - Error"
+                android:id="@+id/btnSWError"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout1">
+            <EditText
+                android:inputType="number"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="1505"
+                android:id="@+id/txtShopId"
+                android:minEms="4"
+                android:gravity="center" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/btnCatalog"
+                android:text="Veemer - Catalog" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2">
+            <EditText
+                android:inputType="number"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/txtBrandId"
+                android:text="1021"
+                android:minEms="4"
+                android:gravity="center" />
+            <Button
+                android:text="Veemer - Clas. Levels"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/btnClassificationLevels" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

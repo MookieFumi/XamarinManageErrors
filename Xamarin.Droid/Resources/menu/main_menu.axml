@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/mainMenu">
+	<item android:id="@+id/logout" android:showAsAction="always" android:orderInCategory="200" android:title="Logout">
+	</item>
+	<item android:id="@+id/veemer" android:showAsAction="always" android:orderInCategory="200" android:title="Veemer">
+		<menu android:id="@+id/veemer_submenu">
+			<item android:id="@+id/catalog" android:title="Catalog" />
+		</menu>
+	</item>
+	<item android:id="@+id/info" android:showAsAction="always" android:orderInCategory="400" android:title="Info">
+		<menu>
+			<item android:id="@+id/user" android:showAsAction="never" android:orderInCategory="500" android:title="User" />
+			<item android:id="@+id/about" android:showAsAction="never" android:orderInCategory="600" android:title="About" />
+		</menu>
+	</item>
+</menu>

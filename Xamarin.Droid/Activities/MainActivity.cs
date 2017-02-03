@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Linq;
 using Android.App;
+using Android.Content;
 using Android.OS;
+using Android.Views;
 using Android.Widget;
+using Xamarin.Droid.Infrastructure;
 using Xamarin.Services;
 using Xamarin.Services.StarWars;
 using Xamarin.Services.Veemer;
+using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace Xamarin.Droid.Activities
 {
-	[Activity(Label = "XamarinErrors", Icon = "@mipmap/icon")]
+	[Activity(Icon = "@mipmap/icon")]
 	public class MainActivity : BaseAuthorizedActivity
 	{
 		Button _btnUnhandledException;
@@ -24,6 +28,16 @@ namespace Xamarin.Droid.Activities
 			base.OnCreate(savedInstanceState);
 
 			SetContentView(Resource.Layout.Main);
+
+			// setup the action bar
+			var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+			SetSupportActionBar(toolbar);
+
+			// ensure that the system bar color gets drawn
+			Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
+
+			// set the title of both the activity and the action bar
+			Title = SupportActionBar.Title = Resources.GetString(Resource.String.app_name);
 
 			_btnUnhandledException = FindViewById<Button>(Resource.Id.btnUnhandledException);
 			_btnUnhandledException.Click += btnUnhandledException_OnClick;
@@ -48,6 +62,51 @@ namespace Xamarin.Droid.Activities
 		{
 		}
 
+		public override bool OnCreateOptionsMenu(IMenu menu)
+		{
+			MenuInflater.Inflate(Resource.Menu.main_menu, menu);
+
+			return base.OnCreateOptionsMenu(menu);
+		}
+
+		public override bool OnOptionsItemSelected(IMenuItem item)
+		{
+			if (item != null)
+			{
+				switch (item.ItemId)
+				{
+					case Resource.Id.logout:
+						var builder = new AlertDialog.Builder(this);
+						builder.SetTitle("Logout")
+							   .SetMessage("Are your sure to log out?")
+							   .SetPositiveButton("Yes", (sender, e) => Logout())
+							   .SetNegativeButton("No", (sender, e) => { });
+						builder.Create().Show();
+						break;
+					case Resource.Id.catalog:
+						Toast.MakeText(this, "Catalog pressed", ToastLength.Long).Show();
+						//StartActivity(new Intent(this, typeof(SettingsActivity)));
+						break;
+					case Resource.Id.user:
+						Toast.MakeText(this, "User pressed", ToastLength.Long).Show();
+						//StartActivity(new Intent(this, typeof(SettingsActivity)));
+						break;
+					case Resource.Id.about:
+						Toast.MakeText(this, "About pressed", ToastLength.Long).Show();
+						//StartActivity(new Intent(this, typeof(SettingsActivity)));
+						break;
+				}
+			}
+
+			return base.OnOptionsItemSelected(item);
+		}
+
+		void Logout()
+		{
+			SharedPreferencesManager.ClearAll();
+			StartActivity(new Intent(this, typeof(LoginActivity)));
+		}
+
 		async void btnClassificationLevels_OnClick(object sender, EventArgs e)
 		{
 			_progressDialog.Show();
@@ -61,7 +120,7 @@ namespace Xamarin.Droid.Activities
 			}
 			catch (HttpWebApiException exception)
 			{
-				Toast.MakeText(this, $"Exception: {exception.InnerException.Message}", ToastLength.Long).Show();
+				Toast.MakeText(this, $"{exception.InnerException.Message}", ToastLength.Long).Show();
 			}
 			finally
 			{
@@ -81,7 +140,7 @@ namespace Xamarin.Droid.Activities
 			}
 			catch (HttpWebApiException exception)
 			{
-				Toast.MakeText(this, $"Exception: {exception.InnerException.Message}", ToastLength.Long).Show();
+				Toast.MakeText(this, $"{exception.InnerException.Message}", ToastLength.Long).Show();
 			}
 			finally
 			{
@@ -100,7 +159,7 @@ namespace Xamarin.Droid.Activities
 			}
 			catch (HttpWebApiException exception)
 			{
-				Toast.MakeText(this, $"Exception: {exception.InnerException.Message}", ToastLength.Long).Show();
+				Toast.MakeText(this, $"{exception.InnerException.Message}", ToastLength.Long).Show();
 			}
 			finally
 			{

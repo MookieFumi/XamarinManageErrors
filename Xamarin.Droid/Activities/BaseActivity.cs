@@ -1,9 +1,10 @@
 using Android.App;
 using Android.OS;
+using Android.Support.V7.App;
 
 namespace Xamarin.Droid.Activities
 {
-	public class BaseActivity : Activity
+	public class BaseActivity : AppCompatActivity
 	{
 
 		protected ProgressDialog _progressDialog;
