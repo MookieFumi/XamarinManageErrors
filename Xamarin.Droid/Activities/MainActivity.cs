@@ -84,8 +84,7 @@ namespace Xamarin.Droid.Activities
 						builder.Create().Show();
 						break;
 					case Resource.Id.catalog:
-						Toast.MakeText(this, "Catalog pressed", ToastLength.Long).Show();
-						//StartActivity(new Intent(this, typeof(SettingsActivity)));
+						StartActivity(new Intent(this, typeof(CatalogActivity)));
 						break;
 					case Resource.Id.user:
 						Toast.MakeText(this, "User pressed", ToastLength.Long).Show();

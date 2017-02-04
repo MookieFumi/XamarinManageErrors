@@ -14,7 +14,7 @@ namespace Xamarin.Droid.Activities
 			base.OnCreate(savedInstanceState);
 
 			_progressDialog = new ProgressDialog(this);
-			_progressDialog.SetTitle("Calling Api (HttpClient)");
+			_progressDialog.SetTitle("Retrieving your data");
 			_progressDialog.SetMessage("Please wait, be patient.");
 			_progressDialog.SetCancelable(false);
 		}
