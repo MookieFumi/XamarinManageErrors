@@ -25,7 +25,6 @@ namespace Xamarin.Droid.Infrastructure
 		{
 			return (sender, args) =>
 			{
-				var kk = "";
 				/*
                  * When a background thread crashes this is the code that will be executed. You can
                  * recover from this.

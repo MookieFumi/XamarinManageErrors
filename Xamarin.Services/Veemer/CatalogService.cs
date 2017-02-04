@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Services.Veemer.DTO;
 
@@ -9,9 +10,12 @@ namespace Xamarin.Services.Veemer
 		{
 		}
 
-		public async Task<VeemerQueryResult<Product>> GetAsync(int id)
+		public async Task<VeemerQueryResult<Product>> GetAsync(int shopId, int page, int pageSize = 20)
 		{
-			return await ExecuteRequestAsync<VeemerQueryResult<Product>>($"/shops/{id}/catalog2");
+			var parameters = new Dictionary<string, object>();
+			parameters.Add("pageIndex", page);
+			parameters.Add("pageSize", pageSize);
+			return await ExecuteRequestAsync<VeemerQueryResult<Product>>($"/shops/{shopId}/catalog2", parameters);
 		}
 	}
 }

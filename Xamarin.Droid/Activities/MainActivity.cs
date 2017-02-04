@@ -5,6 +5,7 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using Xamarin.Droid.Activities.Catalog;
 using Xamarin.Droid.Infrastructure;
 using Xamarin.Services;
 using Xamarin.Services.StarWars;
@@ -134,7 +135,7 @@ namespace Xamarin.Droid.Activities
 			{
 				var value = FindViewById<EditText>(Resource.Id.txtShopId).Text;
 				var catalogService = new CatalogService(new Authorization(UserName, Password, PasswordType.Password));
-				var response = await catalogService.GetAsync(Convert.ToInt32(value));
+				var response = await catalogService.GetAsync(Convert.ToInt32(value), 1);
 				Toast.MakeText(this, $"Catalog: {response.TotalCount} items.", ToastLength.Long).Show();
 			}
 			catch (HttpWebApiException exception)

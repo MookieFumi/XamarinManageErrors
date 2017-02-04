@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading;
@@ -21,13 +22,20 @@ namespace Xamarin.Services.Veemer
 
 		string baseUri = "https://api-veemer-pre.azurewebsites.net";
 
-		protected async Task<T> ExecuteRequestAsync<T>(string api)
+		protected async Task<T> ExecuteRequestAsync<T>(string api, Dictionary<string, object> parameters = null)
 		{
 			using (var httpClient = new HttpClient())
 			{
 				httpClient.AddHeaders(_authorization);
 
 				var uri = string.Format("{0}{1}", baseUri, api);
+
+				if (parameters != null)
+				{
+					var queryString = string.Join("&", parameters.Select(p => string.Format($"{p.Key}={p.Value}")));
+					uri += "?" + queryString;
+				}
+
 				var httpRequest = new HttpRequestMessage(HttpMethod.Get, uri);
 
 				string content = null;
@@ -51,7 +59,7 @@ namespace Xamarin.Services.Veemer
 			}
 		}
 
-		protected async Task<T> ExecuteRequestAsync<T>(string api, Dictionary<string, string> body)
+		protected async Task<T> ExecuteRequestAsync<T>(string api, Dictionary<string, string> values)
 		{
 			using (var httpClient = new HttpClient())
 			{
@@ -60,7 +68,7 @@ namespace Xamarin.Services.Veemer
 				var uri = string.Format("{0}{1}", baseUri, api);
 				var httpRequest = new HttpRequestMessage(HttpMethod.Post, uri);
 
-				var content = JsonConvert.SerializeObject(body, new KeyValuePairConverter());
+				var content = JsonConvert.SerializeObject(values, new KeyValuePairConverter());
 				httpRequest.Content = new StringContent(content, Encoding.UTF8, "application/json");
 
 				try
