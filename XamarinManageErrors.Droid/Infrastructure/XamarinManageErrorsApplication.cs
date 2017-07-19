@@ -2,6 +2,7 @@ using System;
 using Android.App;
 using Android.Runtime;
 using HockeyApp.Android;
+using System.Diagnostics;
 
 namespace XamarinManageErrors.Droid.Infrastructure
 {
@@ -24,7 +25,8 @@ namespace XamarinManageErrors.Droid.Infrastructure
         {
             return (sender, args) =>
             {
-                var a string = "";
+                Debug.WriteLine(nameof(CurrentDomain_OnUnhandledException));
+                var a = "";
                 /*
                  * When a background thread crashes this is the code that will be executed. You can
                  * recover from this.
@@ -48,6 +50,7 @@ namespace XamarinManageErrors.Droid.Infrastructure
         {
             return (sender, args) =>
             {
+                Debug.WriteLine(nameof(AndroidEnvironment_OnUnhandledExceptionRaiser));
                 var a = "";
                 /*
                  * When the UI Thread crashes this is the code that will be executed. There is no context at this point

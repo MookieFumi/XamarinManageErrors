@@ -3,45 +3,27 @@ using Newtonsoft.Json;
 
 namespace XamarinManageErrors.Droid.Infrastructure
 {
-	class XamarinErrorsCrashListener : CrashManagerListener
-	{
-		public override string Contact
-		{
-			get
-			{
-				return SharedPreferencesManager.GetLoginResponse().FullName;
-			}
-		}
+    internal class XamarinErrorsCrashListener : CrashManagerListener
+    {
+        //public override string Contact => SharedPreferencesManager.GetLoginResponse().FullName;
 
-		public override string UserID
-		{
-			get
-			{
-				return SharedPreferencesManager.GetUserName();
-			}
-		}
+        //public override string UserID => SharedPreferencesManager.GetUserName();
 
-		public override string Description
-		{
-			get
-			{
-				return JsonConvert.SerializeObject(SharedPreferencesManager.GetLoginResponse());
-			}
-		}
+        //public override string Description => JsonConvert.SerializeObject(SharedPreferencesManager.GetLoginResponse());
 
-		public override bool IncludeDeviceData()
-		{
-			return true;
-		}
+        //public override bool IncludeDeviceData()
+        //{
+        //	return true;
+        //}
 
-		public override bool IncludeDeviceIdentifier()
-		{
-			return true;
-		}
+        //public override bool IncludeDeviceIdentifier()
+        //{
+        //	return true;
+        //}
 
-		public override bool ShouldAutoUploadCrashes()
-		{
-			return true;
-		}
-	}
+        //public override bool ShouldAutoUploadCrashes()
+        //{
+        //	return true;
+        //}
+    }
 }

@@ -35,13 +35,13 @@
           "lib/portable-net45+win8/System.Net.Http.Primitives.dll": {}
         }
       },
-      "Newtonsoft.Json/9.0.1": {
+      "Newtonsoft.Json/10.0.3": {
         "type": "package",
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll": {}
         }
       }
     }
@@ -216,11 +216,12 @@
         "microsoft.net.http.nuspec"
       ]
     },
-    "Newtonsoft.Json/9.0.1": {
-      "sha512": "Y8bSZ3EJ1P7LRsM4X7gJYonPdMg5U97576FVsI1ePKrMCkV0P3I4/VrsASCy4XjvbZRR0ZLOIiGk+8+3HhL2tg==",
+    "Newtonsoft.Json/10.0.3": {
+      "sha512": "wBM7i7i3U2WX0ecor4zdVGvgrwFUjuigBoHKiL+nH39fCOpCPjBY3RDqJM32edvdyTAVdjzlccHsg41+/+zpSA==",
       "type": "package",
-      "path": "newtonsoft.json/9.0.1",
+      "path": "newtonsoft.json/10.0.3",
       "files": [
+        "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -231,11 +232,13 @@
         "lib/net45/Newtonsoft.Json.xml",
         "lib/netstandard1.0/Newtonsoft.Json.dll",
         "lib/netstandard1.0/Newtonsoft.Json.xml",
-        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.9.0.1.nupkg.sha512",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.10.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "tools/install.ps1"
       ]
@@ -246,7 +249,7 @@
       "Microsoft.Bcl >= 1.1.10",
       "Microsoft.Bcl.Build >= 1.0.21",
       "Microsoft.Net.Http >= 2.2.29",
-      "Newtonsoft.Json >= 9.0.1"
+      "Newtonsoft.Json >= 10.0.3"
     ],
     ".NETPortable,Version=v4.5,Profile=Profile7": []
   },
@@ -255,9 +258,9 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "/Users/mookiefumi/repos/Xamarin/XamarinManageErrors/XamarinManageErrors.Services",
-      "projectName": "XamarinManageErrors",
-      "projectPath": "/Users/mookiefumi/repos/Xamarin/XamarinManageErrors/XamarinManageErrors.Services",
+      "projectUniqueName": "/Users/mookiefumi/repos/Xamarin/XamarinManageErrors/XamarinManageErrors.Services/XamarinManageErrors.Services.csproj",
+      "projectName": "XamarinManageErrors.Services",
+      "projectPath": "/Users/mookiefumi/repos/Xamarin/XamarinManageErrors/XamarinManageErrors.Services/XamarinManageErrors.Services.csproj",
       "projectJsonPath": "/Users/mookiefumi/repos/Xamarin/XamarinManageErrors/XamarinManageErrors.Services/project.json",
       "projectStyle": "ProjectJson"
     },
@@ -265,7 +268,7 @@
       "Microsoft.Bcl": "1.1.10",
       "Microsoft.Bcl.Build": "1.0.21",
       "Microsoft.Net.Http": "2.2.29",
-      "Newtonsoft.Json": "9.0.1"
+      "Newtonsoft.Json": "10.0.3"
     },
     "frameworks": {
       "portable45-net45+win8": {}
