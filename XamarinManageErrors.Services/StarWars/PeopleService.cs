@@ -16,6 +16,4 @@ namespace XamarinManageErrors.Services.StarWars
 			return await ExecuteRequestAsync<Person>($"/people/{id}");
 		}
 	}
-
-	
 }

@@ -9,21 +9,21 @@ namespace XamarinManageErrors.Services.StarWars
 {
 	public class StarWarsServiceBase
 	{
-		string baseUri = "http://swapi.co/api";
+		private const string BaseUri = "http://swapi.co/api";
 
 		protected async Task<T> ExecuteRequestAsync<T>(string api)
 		{
 			using (var client = new HttpClient())
 			{
-				var uri = string.Format("{0}{1}", baseUri, api);
+				var uri = $"{BaseUri}{api}";
 				var httpRequest = new HttpRequestMessage(new HttpMethod("GET"), uri);
 				string content = null;
 				try
 				{
 					client.Timeout = TimeSpan.FromSeconds(30);
-					var _cancelTokenSource = new CancellationTokenSource();
-					var _cancelToken = _cancelTokenSource.Token;
-					var response = await client.SendAsync(httpRequest, _cancelToken).ConfigureAwait(false);
+					var cancelTokenSource = new CancellationTokenSource();
+					var cancelToken = cancelTokenSource.Token;
+					var response = await client.SendAsync(httpRequest, cancelToken).ConfigureAwait(false);
 					content = await response.Content.ReadAsStringAsync();
 					response.EnsureSuccessStatusCode();
 				}

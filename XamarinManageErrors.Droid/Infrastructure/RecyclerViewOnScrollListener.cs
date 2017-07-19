@@ -9,14 +9,13 @@ namespace XamarinManageErrors.Droid.Infrastructure
 		public event LoadMoreEventHandler LoadMoreEvent;
 
 		// The total number of items in the dataset after the last load
-		private int previousTotalItemCount = 0;
-		private bool loading = true;
-		private int visibleThreshold = 5;
-		int firstVisibleItem, visibleItemCount, totalItemCount;
-		private int startingPageIndex = 0;
-		private int currentPage = 0;
-
-		private RecyclerView.LayoutManager _layoutManager;
+		private int _previousTotalItemCount = 0;
+		private bool _loading = true;
+		private const int VisibleThreshold = 5;
+		private int _firstVisibleItem, _visibleItemCount, _totalItemCount;
+		private const int StartingPageIndex = 0;
+		private int _currentPage = 0;
+		private readonly RecyclerView.LayoutManager _layoutManager;
 
 		public RecyclerViewOnScrollListener(RecyclerView.LayoutManager layoutManager)
 		{
@@ -28,43 +27,43 @@ namespace XamarinManageErrors.Droid.Infrastructure
 			base.OnScrolled(recyclerView, dx, dy);
 
 			var layoutManager = (LinearLayoutManager)_layoutManager;
-			visibleItemCount = recyclerView.ChildCount;
-			totalItemCount = layoutManager.ItemCount;
-			firstVisibleItem = layoutManager.FindFirstVisibleItemPosition();
-			OnScroll(firstVisibleItem, visibleItemCount, totalItemCount);
+			_visibleItemCount = recyclerView.ChildCount;
+			_totalItemCount = layoutManager.ItemCount;
+			_firstVisibleItem = layoutManager.FindFirstVisibleItemPosition();
+			OnScroll(_firstVisibleItem, _visibleItemCount, _totalItemCount);
 		}
 
 		public void OnScroll(int firstVisibleItem, int visibleItemCount, int totalItemCount)
 		{
 			// If the total item count is zero and the previous isn't, assume the
 			// list is invalidated and should be reset back to initial state
-			if (totalItemCount < previousTotalItemCount)
+			if (totalItemCount < _previousTotalItemCount)
 			{
-				this.currentPage = this.startingPageIndex;
-				this.previousTotalItemCount = totalItemCount;
+				_currentPage = StartingPageIndex;
+				_previousTotalItemCount = totalItemCount;
 				if (totalItemCount == 0)
 				{
-					this.loading = true;
+					_loading = true;
 				}
 			}
 			// If it’s still loading, we check to see if the dataset count has
 			// changed, if so we conclude it has finished loading and update the current page
 			// number and total item count.
-			if (loading && (totalItemCount > previousTotalItemCount))
+			if (_loading && (totalItemCount > _previousTotalItemCount))
 			{
-				loading = false;
-				previousTotalItemCount = totalItemCount;
-				currentPage++;
+				_loading = false;
+				_previousTotalItemCount = totalItemCount;
+				_currentPage++;
 			}
 
 			// If it isn’t currently loading, we check to see if we have breached
 			// the visibleThreshold and need to reload more data.
 			// If we do need to reload some more data, we execute onLoadMore to fetch the data.
-			if (!loading && (totalItemCount - visibleItemCount) <= (firstVisibleItem +
-					visibleThreshold))
+			if (!_loading && (totalItemCount - visibleItemCount) <= (firstVisibleItem +
+					VisibleThreshold))
 			{
-				LoadMoreEvent(currentPage + 1, totalItemCount);
-				loading = true;
+				LoadMoreEvent(_currentPage + 1, totalItemCount);
+				_loading = true;
 			}
 		}
 

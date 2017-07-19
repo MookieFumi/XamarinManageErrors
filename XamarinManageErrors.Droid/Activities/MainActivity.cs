@@ -101,15 +101,15 @@ namespace XamarinManageErrors.Droid.Activities
 			return base.OnOptionsItemSelected(item);
 		}
 
-		void Logout()
+		private void Logout()
 		{
 			SharedPreferencesManager.ClearAll();
 			StartActivity(new Intent(this, typeof(LoginActivity)));
 		}
 
-		async void btnClassificationLevels_OnClick(object sender, EventArgs e)
+		private async void btnClassificationLevels_OnClick(object sender, EventArgs e)
 		{
-			_progressDialog.Show();
+			ProgressDialog.Show();
 			try
 			{
 				var value = FindViewById<EditText>(Resource.Id.txtBrandId).Text;
@@ -124,13 +124,13 @@ namespace XamarinManageErrors.Droid.Activities
 			}
 			finally
 			{
-				_progressDialog.Dismiss();
+				ProgressDialog.Dismiss();
 			}
 		}
 
-		async void btnCatalog_OnClick(object sender, EventArgs e)
+		private async void btnCatalog_OnClick(object sender, EventArgs e)
 		{
-			_progressDialog.Show();
+			ProgressDialog.Show();
 			try
 			{
 				var value = FindViewById<EditText>(Resource.Id.txtShopId).Text;
@@ -144,13 +144,13 @@ namespace XamarinManageErrors.Droid.Activities
 			}
 			finally
 			{
-				_progressDialog.Dismiss();
+				ProgressDialog.Dismiss();
 			}
 		}
 
-		async void btnSWError_OnClick(object sender, EventArgs e)
+		private async void btnSWError_OnClick(object sender, EventArgs e)
 		{
-			_progressDialog.Show();
+			ProgressDialog.Show();
 			try
 			{
 				var peopleService = new PeopleService();
@@ -163,24 +163,24 @@ namespace XamarinManageErrors.Droid.Activities
 			}
 			finally
 			{
-				_progressDialog.Dismiss();
+				ProgressDialog.Dismiss();
 			}
 		}
 
-		async void btnSWNoError_OnClick(object sender, EventArgs e)
+		private async void btnSWNoError_OnClick(object sender, EventArgs e)
 		{
-			_progressDialog.Show();
+			ProgressDialog.Show();
 
 			var peopleService = new PeopleService();
 			var response = await peopleService.GetAllAsync();
 
-			_progressDialog.Dismiss();
+			ProgressDialog.Dismiss();
 
 			Toast.MakeText(this, $"There are {response.Count} people. First one is {response.Results.First().Name}",
 				ToastLength.Long).Show();
 		}
 
-		void btnHandledException_OnClick(object sender, EventArgs e)
+		private void btnHandledException_OnClick(object sender, EventArgs e)
 		{
 			try
 			{
@@ -192,7 +192,7 @@ namespace XamarinManageErrors.Droid.Activities
 			}
 		}
 
-		void btnUnhandledException_OnClick(object sender, EventArgs e)
+		static void btnUnhandledException_OnClick(object sender, EventArgs e)
 		{
 			throw new OutOfMemoryException("AnalyticAlways Exception");
 		}

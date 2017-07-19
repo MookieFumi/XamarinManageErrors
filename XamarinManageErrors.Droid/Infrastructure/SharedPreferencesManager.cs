@@ -8,60 +8,60 @@ namespace XamarinManageErrors.Droid.Infrastructure
 
 	public static class SharedPreferencesManager
 	{
-		const string APPNAME = "XamarinErrors";
-		const string USERNAME = "UserName";
-		const string PASSWORD = "Password";
-		const string LOGINRESPONSE = "LoginResponse";
+		private const string Appname = "XamarinErrors";
+		private const string Username = "UserName";
+		private const string Password = "Password";
+		private const string Loginresponse = "LoginResponse";
 
 		public static string GetUserName()
 		{
-			return Get(USERNAME);
+			return Get(Username);
 		}
 
 		public static string GetPassword()
 		{
-			return Get(PASSWORD);
+			return Get(Password);
 		}
 
 		public static LoginResponse GetLoginResponse()
 		{
-			return JsonConvert.DeserializeObject<LoginResponse>(Get(LOGINRESPONSE));
+			return JsonConvert.DeserializeObject<LoginResponse>(Get(Loginresponse));
 		}
 
 		public static void SaveUserName(string userName)
 		{
-			Save(USERNAME, userName);
+			Save(Username, userName);
 		}
 
 		public static void SavePassword(string password)
 		{
-			Save(PASSWORD, password);
+			Save(Password, password);
 		}
 
 		public static void SaveLoginResponse(string loginResponse)
 		{
-			Save(LOGINRESPONSE, loginResponse);
+			Save(Loginresponse, loginResponse);
 		}
 
 		public static void ClearAll()
 		{
-			var sharedPreferences = Application.Context.GetSharedPreferences(APPNAME, FileCreationMode.Private);
+			var sharedPreferences = Application.Context.GetSharedPreferences(Appname, FileCreationMode.Private);
 			var edit = sharedPreferences.Edit();
 			edit.Clear();
 			edit.Commit();
 		}
 
-		static void Save(string key, string value)
+		private static void Save(string key, string value)
 		{
-			var sharedPreferences = Application.Context.GetSharedPreferences(APPNAME, FileCreationMode.Private);
+			var sharedPreferences = Application.Context.GetSharedPreferences(Appname, FileCreationMode.Private);
 			var edit = sharedPreferences.Edit();
 			edit.PutString(key, value);
 			edit.Commit();
 		}
 
-		static string Get(string key)
+		private static string Get(string key)
 		{
-			var sharedPreferences = Application.Context.GetSharedPreferences(APPNAME, FileCreationMode.Private);
+			var sharedPreferences = Application.Context.GetSharedPreferences(Appname, FileCreationMode.Private);
 			return sharedPreferences.GetString(key, null);
 		}
 	}

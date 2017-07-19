@@ -7,16 +7,16 @@ namespace XamarinManageErrors.Droid.Activities
 	public class BaseActivity : AppCompatActivity
 	{
 
-		protected ProgressDialog _progressDialog;
+		protected ProgressDialog ProgressDialog;
 
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
 
-			_progressDialog = new ProgressDialog(this);
-			_progressDialog.SetTitle("Retrieving your data");
-			_progressDialog.SetMessage("Please wait, be patient.");
-			_progressDialog.SetCancelable(false);
+			ProgressDialog = new ProgressDialog(this);
+			ProgressDialog.SetTitle("Retrieving your data");
+			ProgressDialog.SetMessage("Please wait, be patient.");
+			ProgressDialog.SetCancelable(false);
 		}
 	}
 

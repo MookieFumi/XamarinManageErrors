@@ -27,9 +27,9 @@ namespace XamarinManageErrors.Droid.Activities
 			login.Click += Login_OnClick;
 		}
 
-		async void Login_OnClick(object sender, EventArgs e)
+		private async void Login_OnClick(object sender, EventArgs e)
 		{
-			_progressDialog.Show();
+			ProgressDialog.Show();
 			try
 			{
 				var accountService = new AccountService(new Authorization(GetUserName().Text, GetPassword().Text, PasswordType.Password));
@@ -47,16 +47,16 @@ namespace XamarinManageErrors.Droid.Activities
 			}
 			finally
 			{
-				_progressDialog.Dismiss();
+				ProgressDialog.Dismiss();
 			}
 		}
 
-		EditText GetUserName()
+		private EditText GetUserName()
 		{
 			return FindViewById<EditText>(Resource.Id.userName);
 		}
 
-		EditText GetPassword()
+		private EditText GetPassword()
 		{
 			return FindViewById<EditText>(Resource.Id.password);
 		}

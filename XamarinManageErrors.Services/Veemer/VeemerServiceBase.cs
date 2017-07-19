@@ -28,7 +28,7 @@ namespace XamarinManageErrors.Services.Veemer
 			{
 				httpClient.AddHeaders(_authorization);
 
-				var uri = string.Format("{0}{1}", baseUri, api);
+				var uri = $"{baseUri}{api}";
 
 				if (parameters != null)
 				{
@@ -42,9 +42,9 @@ namespace XamarinManageErrors.Services.Veemer
 				try
 				{
 					httpClient.Timeout = TimeSpan.FromSeconds(10);
-					var _cancelTokenSource = new CancellationTokenSource();
-					var _cancelToken = _cancelTokenSource.Token;
-					var response = await httpClient.SendAsync(httpRequest, _cancelToken).ConfigureAwait(false);
+					var cancelTokenSource = new CancellationTokenSource();
+					var cancelToken = cancelTokenSource.Token;
+					var response = await httpClient.SendAsync(httpRequest, cancelToken).ConfigureAwait(false);
 					content = await response.Content.ReadAsStringAsync();
 					response.EnsureSuccessStatusCode();
 				}
@@ -65,7 +65,7 @@ namespace XamarinManageErrors.Services.Veemer
 			{
 				httpClient.AddHeaders(_authorization).AddHeaderContentType();
 
-				var uri = string.Format("{0}{1}", baseUri, api);
+				var uri = $"{baseUri}{api}";
 				var httpRequest = new HttpRequestMessage(HttpMethod.Post, uri);
 
 				var content = JsonConvert.SerializeObject(values, new KeyValuePairConverter());
@@ -74,9 +74,9 @@ namespace XamarinManageErrors.Services.Veemer
 				try
 				{
 					httpClient.Timeout = TimeSpan.FromSeconds(10);
-					var _cancelTokenSource = new CancellationTokenSource();
-					var _cancelToken = _cancelTokenSource.Token;
-					var response = await httpClient.SendAsync(httpRequest, _cancelToken).ConfigureAwait(false);
+					var cancelTokenSource = new CancellationTokenSource();
+					var cancelToken = cancelTokenSource.Token;
+					var response = await httpClient.SendAsync(httpRequest, cancelToken).ConfigureAwait(false);
 					content = await response.Content.ReadAsStringAsync();
 					response.EnsureSuccessStatusCode();
 				}

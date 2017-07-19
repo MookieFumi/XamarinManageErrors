@@ -20,10 +20,11 @@ namespace XamarinManageErrors.Droid.Infrastructure
             CrashManager.Register(this, "2c08366e1b8a431ab13e2b22d5c7745a", new XamarinErrorsCrashListener());
         }
 
-        static UnhandledExceptionEventHandler CurrentDomain_OnUnhandledException()
+        private static UnhandledExceptionEventHandler CurrentDomain_OnUnhandledException()
         {
             return (sender, args) =>
             {
+                var a string = "";
                 /*
                  * When a background thread crashes this is the code that will be executed. You can
                  * recover from this.
@@ -43,10 +44,11 @@ namespace XamarinManageErrors.Droid.Infrastructure
             };
         }
 
-        static EventHandler<RaiseThrowableEventArgs> AndroidEnvironment_OnUnhandledExceptionRaiser()
+        private static EventHandler<RaiseThrowableEventArgs> AndroidEnvironment_OnUnhandledExceptionRaiser()
         {
             return (sender, args) =>
             {
+                var a = "";
                 /*
                  * When the UI Thread crashes this is the code that will be executed. There is no context at this point
                  * and no way to recover from the exception. This is where you would capture the error and log it to a 
