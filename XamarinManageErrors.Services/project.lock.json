@@ -1,4 +1,5 @@
 {
+  "locked": false,
   "version": 2,
   "targets": {
     ".NETPortable,Version=v4.5,Profile=Profile7": {
@@ -15,10 +16,7 @@
         }
       },
       "Microsoft.Bcl.Build/1.0.21": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Bcl.Build.targets": {}
-        }
+        "type": "package"
       },
       "Microsoft.Net.Http/2.2.29": {
         "type": "package",
@@ -42,6 +40,15 @@
         },
         "runtime": {
           "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll": {}
+        }
+      },
+      "System.Net.Http/4.3.2": {
+        "type": "package",
+        "compile": {
+          "ref/portable-net45+win8+wpa81/_._": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/_._": {}
         }
       }
     }
@@ -242,6 +249,45 @@
         "newtonsoft.json.nuspec",
         "tools/install.ps1"
       ]
+    },
+    "System.Net.Http/4.3.2": {
+      "sha512": "y7hv0o0weI0j0mvEcBOdt1F3CAADiWlcw3e54m8TfYiRmBPDIsHElx8QUPDlY4x6yWXKPGN0Z2TuXCTPgkm5WQ==",
+      "type": "package",
+      "files": [
+        "System.Net.Http.4.3.2.nupkg.sha512",
+        "System.Net.Http.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/Xamarinmac20/_._",
+        "lib/monoandroid10/_._",
+        "lib/monotouch10/_._",
+        "lib/net45/_._",
+        "lib/net46/System.Net.Http.dll",
+        "lib/portable-net45+win8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/Xamarinmac20/_._",
+        "ref/monoandroid10/_._",
+        "ref/monotouch10/_._",
+        "ref/net45/_._",
+        "ref/net46/System.Net.Http.dll",
+        "ref/netcore50/System.Net.Http.dll",
+        "ref/netstandard1.1/System.Net.Http.dll",
+        "ref/netstandard1.3/System.Net.Http.dll",
+        "ref/portable-net45+win8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll",
+        "runtimes/win/lib/net46/System.Net.Http.dll",
+        "runtimes/win/lib/netcore50/System.Net.Http.dll",
+        "runtimes/win/lib/netstandard1.3/System.Net.Http.dll"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -249,29 +295,9 @@
       "Microsoft.Bcl >= 1.1.10",
       "Microsoft.Bcl.Build >= 1.0.21",
       "Microsoft.Net.Http >= 2.2.29",
-      "Newtonsoft.Json >= 10.0.3"
+      "Newtonsoft.Json >= 10.0.3",
+      "System.Net.Http >= 4.3.2"
     ],
     ".NETPortable,Version=v4.5,Profile=Profile7": []
-  },
-  "packageFolders": {
-    "/Users/mookiefumi/.nuget/packages/": {}
-  },
-  "project": {
-    "restore": {
-      "projectUniqueName": "/Users/mookiefumi/repos/Xamarin/XamarinManageErrors/XamarinManageErrors.Services/XamarinManageErrors.Services.csproj",
-      "projectName": "XamarinManageErrors.Services",
-      "projectPath": "/Users/mookiefumi/repos/Xamarin/XamarinManageErrors/XamarinManageErrors.Services/XamarinManageErrors.Services.csproj",
-      "projectJsonPath": "/Users/mookiefumi/repos/Xamarin/XamarinManageErrors/XamarinManageErrors.Services/project.json",
-      "projectStyle": "ProjectJson"
-    },
-    "dependencies": {
-      "Microsoft.Bcl": "1.1.10",
-      "Microsoft.Bcl.Build": "1.0.21",
-      "Microsoft.Net.Http": "2.2.29",
-      "Newtonsoft.Json": "10.0.3"
-    },
-    "frameworks": {
-      "portable45-net45+win8": {}
-    }
   }
 }

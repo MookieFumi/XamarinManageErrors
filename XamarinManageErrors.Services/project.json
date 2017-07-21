@@ -3,7 +3,8 @@
     "Microsoft.Bcl": "1.1.10",
     "Microsoft.Bcl.Build": "1.0.21",
     "Microsoft.Net.Http": "2.2.29",
-    "Newtonsoft.Json": "10.0.3"
+    "Newtonsoft.Json": "10.0.3",
+    "System.Net.Http": "4.3.2"
   },
   "frameworks": {
     ".NETPortable,Version=v4.5,Profile=Profile7": {}

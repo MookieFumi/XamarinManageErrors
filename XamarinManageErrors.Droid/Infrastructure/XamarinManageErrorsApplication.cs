@@ -3,6 +3,7 @@ using Android.App;
 using Android.Runtime;
 using HockeyApp.Android;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace XamarinManageErrors.Droid.Infrastructure
 {
@@ -16,8 +17,13 @@ namespace XamarinManageErrors.Droid.Infrastructure
         {
             base.OnCreate();
 
-            AndroidEnvironment.UnhandledExceptionRaiser += AndroidEnvironment_OnUnhandledExceptionRaiser();
+            TaskScheduler.UnobservedTaskException += (sender, args) =>
+            {
+                Console.WriteLine(args.Exception.Message);
+            };
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_OnUnhandledException();
+
+            AndroidEnvironment.UnhandledExceptionRaiser += AndroidEnvironment_OnUnhandledExceptionRaiser();
             CrashManager.Register(this, "2c08366e1b8a431ab13e2b22d5c7745a", new XamarinErrorsCrashListener());
         }
 
